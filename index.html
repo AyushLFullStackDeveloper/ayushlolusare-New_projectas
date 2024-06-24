@@ -12,7 +12,11 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="icon"  type="x/icon" href="https://cdn.colorexpertsbd.com/wp-content/uploads/2018/05/011_2.jpg">
+    <link
+      rel="icon"
+      type="x/icon"
+      href="https://cdn.colorexpertsbd.com/wp-content/uploads/2018/05/011_2.jpg"
+    />
     <style>
       /* / Global reset and basic styling / */
       * {
@@ -26,7 +30,6 @@
 / Smooth scrolling for the entire page / */
       html {
         scroll-behavior: smooth;
-        
       }
 
       /* / Body styles / */
@@ -772,8 +775,8 @@
       </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12">
+
       // Typed.js Initialization
       const typed = new Typed(".multiple-text", {
         strings: [
@@ -789,10 +792,13 @@
         backSpeed: 70,
         backDelay: 1000,
         loop: true,
+        showCursor: true,
+        color:red,
       });
 
       document.getElementById("menu-icon").onclick = function () {
         document.querySelector(".navbar").classList.toggle("active");
+
       };
 
       // JavaScript to close the navbar when clicking outside
