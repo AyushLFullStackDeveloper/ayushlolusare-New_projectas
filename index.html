@@ -12,6 +12,7 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <link rel="icon"  type="x/icon" href="https://cdn.colorexpertsbd.com/wp-content/uploads/2018/05/011_2.jpg">
     <style>
       /* / Global reset and basic styling / */
       * {
@@ -25,6 +26,7 @@
 / Smooth scrolling for the entire page / */
       html {
         scroll-behavior: smooth;
+        
       }
 
       /* / Body styles / */
@@ -127,12 +129,12 @@
       /* / Expand navbar link underline on hover / */
       .navbar a:hover:after {
         width: 100%;
-        background-color: #ff3c78;
+        background-color: blue;
       }
 
       /* / Change text color on navbar link hover / */
       .navbar a:hover {
-        color: rgba(202, 30, 21, 0.957);
+        color: blueviolet;
       }
 
       /* / Media query for screens up to 1024px (tablets and smaller screens) / */
@@ -755,9 +757,13 @@
         </div>
         <div class="info-item">
           <i class="bx bxl-github"></i>
-          <p>
-            https://github.com/AyushLFullStackDeveloper/AyushlFullStackDeveloper_new
-          </p>
+
+          <a
+            href="https://github.com/AyushLFullStackDeveloper/ayushlolusare-New_projectas"
+            style="color: white"
+          >
+            <p>Github</p></a
+          >
         </div>
         <div class="info-item">
           <i class="bx bxl-skype"></i>
@@ -825,14 +831,14 @@
           });
       }
       function copySkype() {
-        const email = "Ayush Lolusare";
+        const skype = "Ayush Lolusare";
         navigator.clipboard
-          .writeText(email)
+          .writeText(skype)
           .then(() => {
             alert("skype name copied to clipboard");
           })
           .catch((err) => {
-            console.error("Failed to copy email: ", err);
+            console.error("Failed to copy Skype: ", err);
           });
       }
     </script>
