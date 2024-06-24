@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .border {
+            background-color: #c1f4f4;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 10px 0;
+            text-align: center;
+            color: #474F7A;
+        }
+
+        legend {
+            font-size: 20px;
+            color: #474F7A;
+        }
+
+        label {
+            font-size: 16px;
+            display: block;
+            margin-bottom: 5px;
+            color: #474F7A;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="time"],
+        input[type="date"],
+        input[type="datetime-local"],
+        select,
+        textarea {
+            font-size: 16px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            height: 40px;
+            width: 100%;
+            font-size: 18px;
+            background-color: #148421;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0f6f18;
+        }
+    </style>
+    <!-- linking -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Kanit&family=Playfair+Display:ital@1&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- section  -->
+    <form action="./formThree.html">
+
+        <fieldset class="border">
+            <legend>Enjoy Programming</legend>
+            <h1>ENTER YOUR DETAILS</h1>
+            <label for="timing">Preferred Timing:</label>
+            <input type="time" id="timing"> To <input type="time" id="timing">
+
+            <label for="dates">Preferred Date:</label>
+            <input type="date" id="dates"> To <input type="date" id="dates">
+
+            <label for="dob">Date Of Birth:</label>
+            <input type="datetime-local" id="dob">
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email">
+
+            <label for="contact">Contract No:</label>
+            <input type="tel" id="contact">
+
+            <label for="com_skill">Communication-Skill (out of 10)</label>
+            <input type="range" id="com_skill" min="0" max="10">
+
+            <label for="age">Age:</label>
+            <input type="number" id="age">
+
+            <label for="batch">Pick A Batch:</label>
+            <select id="batch">
+                <optgroup label="Senior">
+                    <option value="proficient">Proficient</option>
+                    <option value="ambitious">Ambitious</option>
+                </optgroup>
+                <optgroup label="Junior">
+                    <option value="scholar">Scholar</option>
+                    <option value="visionary">Visionary</option>
+                </optgroup>
+            </select>
+
+            <label for="about">Tell Something About Yourself</label>
+            <textarea id="about" rows="3" placeholder="Write about yourself"></textarea>
+
+            <input type="submit" value="Sign Up">
+        </fieldset>
+
+    </form>
+</body>
+
+</html>

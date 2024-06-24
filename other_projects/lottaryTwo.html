@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lottery Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 400px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      margin-top: 0;
+      text-align: center;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #666;
+    }
+
+    input[type="number"] {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin: 0 auto 20px auto;
+      display: block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      border: none;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      display: block;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    #scoreboard {
+      margin-top: 20px;
+      border-top: 1px solid #ccc;
+      padding-top: 20px;
+    }
+
+    #scoreboard h3 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    #scoreboard p {
+      margin: 5px 0;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Lottery Game</h2>
+    <label for="lotteryNumber">Enter your lottery number (1-10):</label>
+    <input type="number" id="lotteryNumber" min="1" max="10" placeholder="Enter number" required>
+    <label for="betAmount">Enter your bet amount:</label>
+    <input type="number" id="betAmount" min="1" placeholder="Enter amount" required>
+    <button onclick="playLottery()">Play Lottery</button>
+    <div id="result"></div>
+    <div id="scoreboard">
+      <h3>Scoreboard</h3>
+      <p>Coins: <span id="coins">100</span></p>
+      <p>Winnings: <span id="winnings">0</span></p>
+    </div>
+  </div>
+
+  <script>
+    let coins = 100;
+    let winnings = 0;
+
+    function playLottery() {
+      let lotteryNumber = parseInt(document.getElementById('lotteryNumber').value);
+      let betAmount = parseInt(document.getElementById('betAmount').value);
+      let resultDisplay = document.getElementById('result');
+      let coinsDisplay = document.getElementById('coins');
+      let winningsDisplay = document.getElementById('winnings');
+
+      if (isNaN(lotteryNumber) || isNaN(betAmount) || lotteryNumber < 1 || lotteryNumber > 10 || betAmount < 1 || betAmount > coins) {
+        resultDisplay.innerHTML = '<span style="color: red;">Please enter valid inputs.</span>';
+      } else {
+        var winningNumber = Math.floor(Math.random() * 10) + 1;
+
+        resultDisplay.innerHTML = 'You chose ' + lotteryNumber + '. The winning number is ' + winningNumber + '.<br>';
+
+        if (lotteryNumber === winningNumber) {
+          var winAmount = betAmount * 10;
+          winnings += winAmount;
+          coins += winAmount;
+          resultDisplay.innerHTML += '<span style="color: green;">Congratulations! You won ' + winAmount + ' coins!</span>';
+        } else {
+          coins -= betAmount;
+          resultDisplay.innerHTML += '<span style="color: red;">Sorry, you didn\'t win. Better luck next time!</span>';
+        }
+
+        coinsDisplay.textContent = coins;
+        winningsDisplay.textContent = winnings;
+      }
+    }
+  </script>
+</body>
+</html>

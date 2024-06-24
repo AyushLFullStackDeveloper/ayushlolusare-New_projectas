@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Page Layout</title>
+    <link rel="icon" type="image/x-icon" href="https://media.licdn.com/dms/image/D4D03AQFx1EfKdKjqRQ/profile-displayphoto-shrink_200_200/0/1706110859470?e=2147483647&v=beta&t=bPonduEB9HyfnA9HqxbEfvpjADCp4k5e_FLtI2dhVWk">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            border: 1px solid #ccc;
+            height: 700px;
+        }
+
+        .left-box {
+            width: 70%;
+            /* Adjusted width to make it larger */
+            border: 1px solid #ccc;
+            margin-right: 10px;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .left-box video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .right-box {
+            width: 30%;
+            /* Adjusted width to make it smaller */
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .right-box .video-container {
+            flex-grow: 1;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+        }
+
+        .right-box .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .first {
+            background-color: #f2f2f2;
+        }
+
+        .second {
+            background-color: #e5e5e5;
+        }
+
+        .third {
+            background-color: #d8d8d8;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- main-container -->
+    <div class="container">
+        <!-- left-box -->
+        <div class="left-box">
+            <video
+                src="https://www.shutterstock.com/shutterstock/videos/1081513610/preview/stock-footage-two-diverse-business-men-discussing-financial-market-data-using-laptop-and-digital-tablet.webm"
+                controls></video>
+        </div>
+        <!-- right-box -->
+        <div class="right-box">
+            <!-- right one -->
+            <div class="video-container first">
+                <video
+                    src="https://www.shutterstock.com/shutterstock/videos/1035023882/preview/stock-footage-focused-businessman-executive-professional-typing-corporate-business-email-working-on-computer.webm"
+                    controls></video>
+            </div>
+            <!-- right two -->
+            <div class="video-container second">
+                <video
+                    src="https://www.shutterstock.com/shutterstock/videos/1035023882/preview/stock-footage-focused-businessman-executive-professional-typing-corporate-business-email-working-on-computer.webm"
+                    controls></video>
+            </div>
+            <!-- right three -->
+            <div class="video-container third">
+                <video
+                    src="https://www.shutterstock.com/shutterstock/videos/1035023882/preview/stock-footage-focused-businessman-executive-professional-typing-corporate-business-email-working-on-computer.webm"
+                    controls></video>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
