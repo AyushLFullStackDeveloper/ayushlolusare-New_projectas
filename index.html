@@ -12,11 +12,6 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link
-      rel="icon"
-      type="x/icon"
-      href="https://cdn.colorexpertsbd.com/wp-content/uploads/2018/05/011_2.jpg"
-    />
     <style>
       /* / Global reset and basic styling / */
       * {
@@ -25,7 +20,6 @@
         box-sizing: border-box;
         font-family: "Poppins", sans-serif;
       }
-
       /* 
 / Smooth scrolling for the entire page / */
       html {
@@ -132,12 +126,12 @@
       /* / Expand navbar link underline on hover / */
       .navbar a:hover:after {
         width: 100%;
-        background-color: blue;
+        background-color: #ff3c78;
       }
 
       /* / Change text color on navbar link hover / */
       .navbar a:hover {
-        color: blueviolet;
+        color: rgba(202, 30, 21, 0.957);
       }
 
       /* / Media query for screens up to 1024px (tablets and smaller screens) / */
@@ -154,12 +148,11 @@
           left: 0;
           width: 100%;
           height: 25vh;
-          background-color: rgba(192, 192, 192, 0.089);
+          background-color: rgba(177, 163, 163, 0.586);
           color: white;
           flex-direction: row;
           justify-content: space-around;
           align-items: center;
-          font-size: xx-large;
           z-index: 99;
           transform: translateX(-100%);
           transition: transform 0.3s ease-in-out;
@@ -188,11 +181,10 @@
         .navbar {
           height: auto;
           width: 100%;
-          background-color: rgba(192, 192, 192, 0.363);
+          background-color: rgba(177, 163, 163, 0.9);
           flex-direction: column;
           justify-content: center;
           padding: 20px 0;
-          font-size: xx-large;
         }
 
         .navbar a {
@@ -230,7 +222,6 @@
 
         .about-img {
           width: 70vw;
-          height: 40vh;
           margin-bottom: 20px;
         }
 
@@ -308,12 +299,11 @@
 
       .home-img {
         flex: 0 0 40%;
-        max-width: 30%;
+        max-width: 40%;
       }
 
       .home-img img {
-        width: 33vw;
-        height: 70vh;
+        width: 100%;
         transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
       }
 
@@ -334,10 +324,6 @@
       }
 
       @media (max-width: 991px) {
-        .home {
-          padding: 70px 5%;
-        }
-
         .home-content {
           flex-direction: column-reverse;
           text-align: center;
@@ -349,21 +335,15 @@
         }
 
         .home-img {
-          flex: 0 0 100%;
-          max-width: 100vw;
+          flex: 0 0 60%;
+          max-width: 60%;
           margin-bottom: 30px;
-        }
-
-        .home-img img {
-          width: 59vw;
-          height: 35vh;
-          transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
       }
 
       @media (max-width: 768px) {
         .home {
-          padding: 50px 5%;
+          padding: 50px 5% 0;
         }
 
         .home-text h3 {
@@ -381,7 +361,6 @@
         .home-img {
           flex: 0 0 80%;
           max-width: 80%;
-          margin: 0 auto 30px;
         }
 
         .btn-box {
@@ -396,8 +375,8 @@
         }
 
         .home-img {
-          max-width: 80%;
-          margin: 0 auto 30px;
+          flex: 0 0 100%;
+          max-width: 100%;
         }
       }
 
@@ -417,17 +396,18 @@
 
       .about-img {
         flex: 0 0 45%;
-        max-width: 35%;
+        max-width: 45%;
       }
 
       .about-img img {
-        width: 30vw;
-        border-radius: 10px;
+        width: 100%;
+        height: 80vh;
         transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
       }
 
       .about-img img:hover {
         transform: scale(1.05);
+        
       }
 
       .about-text {
@@ -478,7 +458,7 @@
         .about-img,
         .about-text {
           flex: 0 0 100%;
-          max-width: 100%;
+          max-width: 80%;
         }
 
         .about-img {
@@ -536,7 +516,6 @@
           font-size: 0.8rem;
         }
       }
-
       /* Portfolio section styles */
       .Portfolio-content {
         display: flex;
@@ -544,14 +523,12 @@
         align-items: flex-start;
         flex-wrap: wrap;
         padding: 100px 10%;
-        gap: 20px;
-        /* Adjust the gap between columns */
+        gap: 20px; /* Adjust the gap between columns */
       }
 
       /* Portfolio item styles */
       .Portfolio-content div {
-        flex: 1 1 calc(33.333% - 40px);
-        /* Adjust the width and spacing of columns */
+        flex: 1 1 calc(33.333% - 40px); /* Adjust the width and spacing of columns */
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -609,7 +586,8 @@
         transform: translateY(1px);
       }
 
-      /* Contact section styles */
+      /* 
+/* Contact section styles */
       .contact-card {
         background-color: #3333334f;
         color: white;
@@ -638,6 +616,11 @@
 
       .info-item p {
         margin: 0;
+      }
+      #typed-text {
+        color: rgb(255, 60, 0);
+        font-size: 30px;
+        font-weight: 900;
       }
     </style>
   </head>
@@ -673,16 +656,16 @@
           <div class="home-text">
             <h3>Hello, It's Me</h3>
             <h1>Ayush Lolusare</h1>
-            <h3>I'm a <span class="multiple-text"></span></h3>
+            <h3>I'm a <span id="typed-text"></span></h3>
             <p>
               I'm passionate about innovative coding solutions that enhance user
               experiences. With expertise in full-stack development, I excel in
               dynamic environments that demand problem-solving and creativity.
             </p>
-            <a href="#about" class="btn-box">More About Me</a>
+            <a href="#About" class="btn-box">More About Me</a>
           </div>
           <div class="home-img">
-            <img src="./home_image-removebg-preview.png" alt="profile_image" />
+            <img src="home_image-removebg-preview.png" alt="profile_image" />
           </div>
         </div>
       </section>
@@ -691,7 +674,7 @@
       <div class="about-content">
         <div class="about-img">
           <img
-            src="./about_image-removebg-preview copy.png"
+            src="about_image-removebg-preview copy.png"
             alt="About Me Image"
           />
         </div>
@@ -714,13 +697,10 @@
           <h2>HTML PROJECTS</h2>
           <p>
             This setup creates a comprehensive portfolio website using
-            <b>HTML, CSS, and JavaScript,</b>
-            suitable for showcasing work and engaging visitors effectively.
+            <b>HTML, CSS, and JavaScript,</b> suitable for showcasing work and
+            engaging visitors effectively.
           </p>
-          <br />
-          <br />
-          <br />
-          <a class="btn-box" href="./htmlProjects.html">Click Here</a>
+          <button>Click Here</button>
         </div>
         <div class="portfolio-item">
           <h2>CSS PROJECTS</h2>
@@ -729,7 +709,7 @@
             and layouts. From responsive design to animations, these projects
             showcase my skills in creating visually appealing web pages.
           </p>
-          <a class="btn-box" href="./cssProjects.html">Click Here</a>
+          <button>Click Here</button>
         </div>
         <div class="portfolio-item">
           <h2>JavaScript PROJECTS</h2>
@@ -738,67 +718,74 @@
             dynamic and interactive web applications. These projects include
             features like form validation, API integration, and more.
           </p>
-          <a class="btn-box" href="./js_projects.html">Click Here</a>
+          <button>Click Here</button>
         </div>
       </div>
     </section>
 
-    <div class="contact-card" id="Contact">
+    <div class="contact-card">
       <h2>Contact Us</h2>
       <div class="contact-info">
         <div class="info-item">
           <i class="bx bx-current-location"></i>
-          <p>Nagpur, Maharashtra, India</p>
+          <p>123 Anywhere St., Any City, ST 12345</p>
         </div>
         <div class="info-item">
           <i class="bx bxs-phone"></i>
-          <p>+91 997095 4494</p>
+          <p>123-456-7890</p>
         </div>
         <div class="info-item">
           <i class="bx bxl-gmail"></i>
-          <p onclick="copyEmail()">ayushlolusare7@gmail.com</p>
+          <p>hello@yourwebsite.com</p>
         </div>
         <div class="info-item">
           <i class="bx bxl-github"></i>
-
-          <a
-            href="https://github.com/AyushLFullStackDeveloper/ayushlolusare-New_projectas"
-            style="color: white"
-          >
-            <p>Github</p></a
-          >
+          <p>www.yourwebsite.com</p>
         </div>
         <div class="info-item">
           <i class="bx bxl-skype"></i>
-          <p onclick="copySkype()">Ayush Lolusare</p>
+          <p>www.yourwebsite.com</p>
         </div>
       </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+      // Function to toggle the mobile menu
+      function toggleMenu() {
+        const menuIcon = document.getElementById("menu-icon");
+        const navbar = document.querySelector(".navbar");
 
-      // Typed.js Initialization
-      const typed = new Typed(".multiple-text", {
-        strings: [
-          "Web Developer",
-          "Web Designer",
-          "Front-end Developer",
-          "Tester",
-          "Quality Assurance",
-          "Project Manager",
-          "FullStackDeveloper",
-        ],
-        typeSpeed: 70,
-        backSpeed: 70,
-        backDelay: 1000,
-        loop: true,
+        menuIcon.addEventListener("click", () => {
+          navbar.classList.toggle("active");
+        });
+      }
+
+      // Function to initialize the Typed.js effect
+      function initializeTyped() {
+        const options = {
+          strings: [
+            "Web Developer",
+            "Web Designer",
+            "Front-end Developer",
+            "Tester",
+            "Quality Assurance",
+            "Project Manager",
+          ],
+          typeSpeed: 70,
+          backSpeed: 70,
+          backDelay: 1000,
+          loop: true,
+        };
+
+        new Typed("#typed-text", options);
+      }
+
+      // Call functions on DOMContentLoaded
+      document.addEventListener("DOMContentLoaded", () => {
+        toggleMenu();
+        initializeTyped();
       });
-
-      document.getElementById("menu-icon").onclick = function () {
-        document.querySelector(".navbar").classList.toggle("active");
-
-      };
-
       // JavaScript to close the navbar when clicking outside
       document.addEventListener("click", function (event) {
         var isClickInsideNavbar = document
@@ -817,34 +804,6 @@
           }
         });
       });
-
-      // Existing JavaScript for menu icon toggle
-      document.getElementById("menu-icon").onclick = function () {
-        document.querySelector(".navbar").classList.toggle("active");
-      };
-
-      function copyEmail() {
-        const email = "ayushlolusare7@gmail.com";
-        navigator.clipboard
-          .writeText(email)
-          .then(() => {
-            alert("Email copied to clipboard");
-          })
-          .catch((err) => {
-            console.error("Failed to copy email: ", err);
-          });
-      }
-      function copySkype() {
-        const skype = "Ayush Lolusare";
-        navigator.clipboard
-          .writeText(skype)
-          .then(() => {
-            alert("skype name copied to clipboard");
-          })
-          .catch((err) => {
-            console.error("Failed to copy Skype: ", err);
-          });
-      }
     </script>
   </body>
 </html>
